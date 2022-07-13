@@ -31,7 +31,6 @@ module.exports = {
     }
 
     // send to next endpoint
-    //do i need this here for graphql???
     next();
   },
   signToken: function ({ username, email, _id }) {
