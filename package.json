@@ -1,7 +1,7 @@
 {
   "name": "googlebooks-app",
   "version": "1.0.0",
-  "description": "Altering the google book fetch API to graphQL API",
+  "description": "Converting google book RESTful API to graphQL API",
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",

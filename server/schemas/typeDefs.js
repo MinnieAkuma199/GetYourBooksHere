@@ -25,6 +25,7 @@ const typeDefs = gql`
     token: ID
     user: User
   }
+  #changed user to loginUser to use in mutations.js client side
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
