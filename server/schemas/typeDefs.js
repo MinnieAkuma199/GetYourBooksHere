@@ -1,5 +1,6 @@
 const { gql } = require("apollo-server-express");
 
+//_id is auto generated mongo
 // token may need to be changed from ID to String
 const typeDefs = gql`
   type Query {
