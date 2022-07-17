@@ -39,11 +39,12 @@ const resolvers = {
       return { token, user };
     },
 
-    saveBook: async (parent, args, context) => {
+    saveBook: async (parent, { input }, context) => {
+      //if you want to test w/out requiring log in take if (contect.user) out and put an id from compass into _id:
       if (context.user) {
         return User.findOneAndUpdate(
-          { _id: userId },
-          { $addToSet: { savedBooks: args.input } },
+          { _id: context.user._id },
+          { $addToSet: { savedBooks: input } },
           { new: true }
         );
       }
