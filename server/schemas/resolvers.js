@@ -7,9 +7,6 @@ const { signToken } = require("../utils/auth");
 //maybe take out line 10-12 if you're having isues
 const resolvers = {
   Query: {
-    User: async (parent, { userId }) => {
-      return User.findOne({ _id: userId });
-    },
     me: async (parent, args, context) => {
       if (context.user) {
         return User.findOne({ _id: context.user._id });
