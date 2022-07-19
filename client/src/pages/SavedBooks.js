@@ -13,6 +13,7 @@ import Auth from "../utils/auth";
 // import { removeBookId } from "../utils/localStorage";
 import { GET_ME } from "../utils/queries";
 import { REMOVE_BOOK } from "../utils/mutations";
+import { removeBookId } from "../utils/localStorage";
 
 const SavedBooks = () => {
   //try to get me data to find saveBooks list
@@ -37,8 +38,9 @@ const SavedBooks = () => {
 
     try {
       const { data } = await removeBook({
-        variables: { bookId },
+        variables: { bookId: bookId },
       });
+      removeBookId(bookId);
       console.log(data);
     } catch (err) {
       console.error(err);

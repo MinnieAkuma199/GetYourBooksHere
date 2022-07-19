@@ -38,9 +38,8 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-
+    //if you want to test w/out requiring log in take if (contect.user) out and put an id from compass into _id:
     saveBook: async (parent, { input }, context) => {
-      //if you want to test w/out requiring log in take if (contect.user) out and put an id from compass into _id:
       if (context.user) {
         return User.findOneAndUpdate(
           { _id: context.user._id },
@@ -50,16 +49,38 @@ const resolvers = {
       }
       throw new AuthenticationError("Log in please!");
     },
+    //need to change add to set to something to delete not to add
+    //     removeBook: async (parent, args, context) => {
+    //       if (context.user) {
+    //         return User.findOneAndUpdate(
+    //           // { _id: userId },
+    //           { _id: context.user._id },
 
-    removeBook: async (parent, args, context) => {
+    //           // { $addToSet: { bookId: args.bookId } },
+    //           { new: true }
+    //         );
+    //       }
+    //       throw new AuthenticationError("Log in please!");
+    //     },
+    //   },
+    // };
+    removeBook: async (parent, { bookId }, context) => {
+      console.log(bookId);
       if (context.user) {
         return User.findOneAndUpdate(
-          { _id: userId },
-          { $addToSet: { bookId: args.bookId } },
-          { new: true }
+          { _id: context.user._id },
+          {
+            $pull: {
+              savedBooks: { bookId },
+            },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
         );
       }
-      throw new AuthenticationError("Log in please!");
+      throw new AuthenticationError("You need to be logged in!");
     },
   },
 };
