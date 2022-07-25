@@ -24,6 +24,7 @@ $ npm i && npm run develop to kick off app.
 ### Usage
 
 Please make sure to login/sign up to see all the app's functionality:
+
 -Searching a book
 
 -Saving a book
