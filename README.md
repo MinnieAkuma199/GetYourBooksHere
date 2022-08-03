@@ -38,6 +38,8 @@ Please make sure to login/sign up to see all the app's functionality:
 -Deleting saved book
 
 [Video demonstrating functionality](https://drive.google.com/file/d/1UEgfuOwvxXG7fNw-wRJHOKGGUnT2pRHl/view)
+
+
 ![alt text](Assets/Graphql-gif.gif)
 
 ### Contributors
