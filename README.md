@@ -10,16 +10,22 @@
 
 ## Table of Contents
 
+- [Technology-Used](#technology-used)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributors](#contributors)
 - [License](#license)
 - [Additional Questions](#additional-questions)
 
+### Technology Used 
+
+Tech Used: Apollo Server, Mongoose, GraphQL, Express, Bcrypt, React, Bootstrap, React-Router
+
+
 ### Installation
 
-To use on localhost in terminal must run:
-$ npm i && npm run develop to kick off app.
+To run on localhost: 
+$ npm i && npm run develop 
 
 ### Usage
 
